@@ -1,0 +1,48 @@
+﻿@model AirportManager.Data.Passenger
+
+@{
+    ViewData["Title"] = "People";
+}
+
+<h1>Personal Details</h1>
+
+<div class="border"">
+    <h4>Passenger</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfirmationNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConfirmationNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eMail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eMail)
+        </dd>
+    </dl>
+</div>
+<div><strong>
+    <button class="btn btn-danger">@Html.ActionLink("Edit", "Edit", Model)</button> |
+    <a asp-action="Index">Back to List</a>
+</strong></div>

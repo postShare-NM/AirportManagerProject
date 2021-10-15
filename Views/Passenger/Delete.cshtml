@@ -1,0 +1,48 @@
+﻿@model AirportManager.Data.Passenger
+
+@{
+    ViewData["Title"] = "Delete";
+    AirportManager.Data.Passenger temp = new AirportManager.Data.Passenger(Model.ConfirmationNumber, Model.Name, Model.Job, Model.Age, Model.eMail);
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Passenger</h4>
+    <hr />
+    <form asp-action="Delete" class="border" style="background-color:orange">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ConfirmationNumber" class="control-label"></label>
+            <input asp-for="ConfirmationNumber" class="form-control" />
+            <span asp-validation-for="ConfirmationNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="control-label"></label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Job" class="control-label"></label>
+            <input asp-for="Job" class="form-control" />
+            <span asp-validation-for="Job" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="eMail" class="control-label"></label>
+            <input asp-for="eMail" class="form-control" />
+            <span asp-validation-for="eMail" class="text-danger"></span>
+        </div>        
+        <div class="form-group"><strong>
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </strong>
+        </div>
+    </form>
+
+</div>

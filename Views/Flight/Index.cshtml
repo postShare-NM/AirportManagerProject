@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Flights"; }
+@model IEnumerable<AirportManager.Data.Flight>
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Flight" asp-action="AddFlight">Add Flight</a>
+                    </li>
+                </ul>
+            
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+
+<div class="text-center border">
+    <h2>View All Flights</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Flight Number</td>
+                <td>Dept_Date</td>
+                <td>Dept_Time</td>
+                <td>Dept_FROM</td>
+                <td>Arrv_Date</td>
+                <td>Arrv_Time</td>
+                <td>Arrv_TO</td>
+                <td>Remaining Seats</td>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in Model)
+            {
+            <tr>
+                <td>@flight.Id_Flight</td>
+                <td>@flight.Dept_Date</td>
+                <td>@flight.Dept_Time</td>
+                <td>@flight.Dept_Port</td>
+                <td>@flight.Arrival_Date</td>
+                <td>@flight.Arrival_Time</td>
+                <td>@flight.Arrival_Port</td>
+                <td>@flight.Capacity</td>
+                
+                <td style="border-left:solid"><strong>
+                    @Html.ActionLink("Details", "Index", "Ticket", flight)
+                    </strong>
+                </td>
+                <td><strong>@Html.ActionLink("Edit", "EditFlight", flight)</strong></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+

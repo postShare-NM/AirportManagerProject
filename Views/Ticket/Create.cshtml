@@ -1,0 +1,28 @@
+﻿@model AirportManager.Data.Ticket
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+<h1>Enter a Confirmation Number to book a seat.</h1>
+
+<form asp-action="Create" class="border">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FlightN" class="control-label"></label>
+        <input asp-for="FlightN" class="form-control" />
+        <span asp-validation-for="FlightN" class="texPersonNt-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PersonN" class="control-label"></label>
+        <input asp-for="PersonN" class="form-control" />
+        <span asp-validation-for="PersonN" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <strong>
+            <input type="submit" value="Create" class="btn btn-primary" />
+            <button class="btn btn-danger">@Html.ActionLink("Book Now", "Create", Model)</button>
+            <a asp-controller="Flight" asp-action="Index">Back to List</a>
+        </strong>
+    </div>
+</form>
